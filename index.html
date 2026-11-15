@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OZEN AI</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #080808;
+      color: white;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+    header {
+      padding: 22px;
+      border-bottom: 1px solid #29200e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      color: #d6a83f;
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+    .status { color: #aaa; font-size: 12px; }
+    main {
+      max-width: 750px;
+      margin: 65px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .orb {
+      width: 125px;
+      height: 125px;
+      margin: 20px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f7d77b, #a67519 45%, #17100a 75%);
+      box-shadow: 0 0 55px #b8892e66;
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      50% { box-shadow: 0 0 85px #d6a83f99; }
+    }
+    h1 { font-size: 35px; }
+    h1 span { color: #d6a83f; }
+    p { color: #999; line-height: 1.6; }
+    .chat {
+      margin-top: 55px;
+      display: flex;
+      gap: 10px;
+    }
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 17px;
+      border-radius: 12px;
+      border: 1px solid #51401e;
+      background: #141414;
+      color: white;
+      outline: none;
+    }
+    button {
+      background: #d6a83f;
+      color: black;
+      border: 0;
+      border-radius: 12px;
+      padding: 15px 22px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #response {
+      margin-top: 25px;
+      color: #e5c779;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">OZEN</div>
+    <div class="status">● SISTEMA ONLINE</div>
+  </header>
+  <main>
+    <div class="orb"></div>
+    <h1>Olá, eu sou a <span>OZEN</span></h1>
+    <p>Sua inteligência artificial pessoal.<br>
+    Estou pronta para começar uma nova jornada.</p>
+    <div class="chat">
+      <input id="message" placeholder="Converse com a OZEN...">
+      <button onclick="sendMessage()">ENVIAR</button>
+    </div>
+    <div id="response"></div>
+  </main>
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("message");
+      const response = document.getElementById("response");
+      if (!input.value.trim()) return;
+      response.textContent =
+        "Olá! Sou a OZEN. Minha conexão com o cérebro de IA será ativada na próxima etapa.";
+      input.value = "";
+    }
+  </script>
+</body>
+</html>
